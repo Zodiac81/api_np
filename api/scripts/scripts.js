@@ -6,7 +6,7 @@ window.onload = function() {
 
         let oldForm = document.forms.getCity;
 
-        let cityForm = new FormData(oldForm)
+        let cityForm = new FormData(oldForm);
         let city = cityForm.get('city');
         let data = {
             city: city
@@ -16,17 +16,23 @@ window.onload = function() {
         $.ajax({
             url:     url,
             type:     "POST",
-            dataType: "json",
+            dataType: "html",
             data: data,
             success: function(response) {
                 let a = JSON.parse(response);
-               // $('#responseBlock').text(a.city);
-                console.log("success " + a);
+                for(let i = 0; i<a.data.length; i++)
+                {
+                     $('#cities-list').append("<option value="+ a.data[i]['CityID']+">"+a.data[i]['DescriptionRu']+"</option>");
+                    //alert('12')
+                }
+              // $('#cities-list').text(a.data[0]['DescriptionRu']);
+                console.log(a.data);
 
 
             },
             error: function(response) {
-                console.log("error " + response);
+                console.log('Error');
+                console.log(response);
             }
         });
 

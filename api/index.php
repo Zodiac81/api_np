@@ -22,7 +22,11 @@
                 <input type="button" value="OK" class="btn btn-primary" id="cityFormBtn">
             </form>
         </div>
-       <div class="col-md-6" id="responseBlock"></div>
+       <div class="col-md-6" id="responseBlock">
+           <select name="" id="cities-list">
+
+           </select>
+       </div>
     </div>
 </div>
 

@@ -29,7 +29,7 @@ class Api
 
         curl_setopt_array($ch, [
             CURLOPT_URL => $this->endpoint,
-            CURLOPT_HEADER => True,
+            CURLOPT_HEADER =>false,
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => "POST",
             CURLOPT_USERAGENT => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36',
@@ -52,10 +52,6 @@ class Api
 
     }
 
-
-    public function city($d){
-        echo $d;
-    }
 }
 
 //        curl_setopt($ch, CURLOPT_URL, "http://testapi.novaposhta.ua/v2.0/json/Address/getCities"); //урл сайта к которому обращаемся
